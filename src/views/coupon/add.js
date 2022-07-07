@@ -36,6 +36,8 @@ class add extends Component {
     	let fields = this.state.fields
     	if(field === 'start_date' || field === 'end_date'){
             fields[field] = e;
+        } else if (field === 'coupon_type') {
+            fields[field] = e.target.value;
         }
         else{
     	   fields[field] = e.target.value;
@@ -87,6 +89,11 @@ class add extends Component {
             formIsValid = false;
             errors["type"] = "Please select type.";
         }
+        if (!fields["coupon_type"]) {
+            formIsValid = false;
+            errors["coupon_type"] = "Please select coupon type.";
+        }
+        
         if(!fields["status"]){
             formIsValid = false;
             errors["status"] = "Please select status.";
@@ -182,7 +189,17 @@ class add extends Component {
 					                      	<option value="amount">Amount</option>
 					                    </CSelect>
 				                    	<CFormText className="help-block">{this.state.errors.type}</CFormText>
-				                  	</CCol>
+                                        </CCol>
+                                        <CCol md="6">
+                                            <CLabel htmlFor="hf-Status">Coupon Type</CLabel>
+                                            <CSelect custom onChange={this.handleChange.bind(this, 'coupon_type')} value={this.state.fields.coupon_type}>
+                                                <option value="">--Select Type--</option>
+                                                <option value="referral">Referral</option>
+                                                <option value="first time user">First Time User</option>
+                                                <option value="other">Other</option>
+                                            </CSelect>
+                                            <CFormText className="help-block">{this.state.errors.coupon_type}</CFormText>
+                                        </CCol>
 				                  	<CCol md="6">
 				                    	<CLabel htmlFor="hf-Status">Value</CLabel>
 				                    	<CInput type="number" placeholder="Enter value" onChange={this.handleChange.bind(this,'value')} value={this.state.fields.value} />

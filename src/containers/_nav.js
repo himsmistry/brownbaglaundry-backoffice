@@ -179,12 +179,12 @@ export default [
         to: '/sales',
         icon: 'cil-chart',
     },
-    /*{
+    {
         _tag: 'CSidebarNavItem',
         name: 'Coupon',
         to: '/coupon/view',
         icon: 'cil-tags',
-    },*/
+    },
     {
         _tag: 'CSidebarNavDropdown',
         name: 'Notification',

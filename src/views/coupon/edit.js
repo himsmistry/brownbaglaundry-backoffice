@@ -34,16 +34,17 @@ class edit extends Component {
     	this.props.history.push('/coupon/view')
     }
 
-    handleChange(field, e){
-    	let fields = this.state.fields
-    	if(field === 'start_date' || field === 'end_date'){
-            fields[field] = e;
-        }
-        else{
-    	   fields[field] = e.target.value;
-        }
-    	this.setState({fields})
-    }
+	handleChange(field, e) {
+		let fields = this.state.fields
+		if (field === 'start_date' || field === 'end_date') {
+			fields[field] = e;
+		} else if (field === 'coupon_type') {
+			fields[field] = e.target.value;
+		} else {
+			fields[field] = e.target.value;
+		}
+		this.setState({ fields })
+	}
 
     validation(){
     	let languages = this.state.languages;
@@ -88,7 +89,11 @@ class edit extends Component {
         if(!fields["type"]){
             formIsValid = false;
             errors["type"] = "Please select type.";
-        }
+		}
+		if (!fields["coupon_type"]) {
+			formIsValid = false;
+			errors["coupon_type"] = "Please select coupon type.";
+		}
         if(!fields["status"]){
             formIsValid = false;
             errors["status"] = "Please select status.";
