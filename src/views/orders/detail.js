@@ -148,7 +148,19 @@ class details extends Component {
 															<p>Mobile: {this.state.fields.staff_mobile_country_code} {this.state.fields.staff_mobile}</p>
 														</td>
 													</tr>
-
+													<tr className="additional-info">
+														<td style={{ height: '30px' }} className="">
+														</td>
+													</tr>
+													<tr className="additional-info">
+														<td className="">
+															<h5>Is First Time Order</h5>
+															{
+																this.state?.fields?.is_first_order ?
+																	<p>YES</p> : <p>NO</p>
+															}
+														</td>
+													</tr>
 													<tr className="details">
 														<td colspan="2">
 															<table className="table table-hover table-outline mb-0 d-sm-table">
@@ -194,7 +206,7 @@ class details extends Component {
 																				}
 																			</tbody>
 																		}
-																		else if (e.service_code === 'BROWN_BAG_SIGNATURE') {
+																		else if (e.service_code === 'LA_LA_SIGNATURE') {
 																			return <tbody key={key}>
 																				<tr>
 																					<td colspan="4" className="cat-title">
@@ -326,11 +338,19 @@ class details extends Component {
 																			<td className="num">{this.state.settings.default_currency}{(this.state.fields.express_service_charge).toFixed(2)}</td>
 																		</tr> : null
 																}
+																
 																{
 																	this.state.fields.is_pickup_delivery ?
 																		<tr className="tax">
 																			<td className="num">Pickup & Delivery Charge</td>
 																			<td className="num">{this.state.settings.default_currency}{(this.state.fields.pickup_delivery_charge).toFixed(2)}</td>
+																		</tr> : null
+																}
+																{
+																	this.state.fields.discount > 0 ?
+																		<tr className="tax">
+																			<td className="num">Discount</td>
+																			<td className="num">{this.state.settings.default_currency}{(this.state.fields.discount).toFixed(2)}</td>
 																		</tr> : null
 																}
 																<tr className="subtotal">

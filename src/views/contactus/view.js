@@ -116,7 +116,7 @@ class view extends Component {
 	              onClose={() => this.setState({modal:!this.state.modal})}
 	              color="info"
             	>
-						<CModalHeader closeButton style={{ backgroundColor:'#9C7046'}}>
+              		<CModalHeader closeButton style={{backgroundColor:'#292d78'}}>
                 		<CModalTitle>Reply</CModalTitle>
               		</CModalHeader>
               		<CModalBody>
@@ -181,7 +181,7 @@ class view extends Component {
 					          	),
 					          	'contact_us_id':
 					          	(item)=>(
-										<td onClick={this.openModal.bind(this, item)} style={{ color:'#9C7046',cursor: 'pointer'}}>
+						            <td onClick={this.openModal.bind(this, item)} style={{color:'#292d78',cursor: 'pointer'}}>
 						              	{item.contact_us_id}
 						            </td>
 					          	),

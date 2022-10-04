@@ -6,7 +6,7 @@ const TheFooter = () => {
     <CFooter fixed={false}>
       <div>
         <CLink>
-          © 2020 Brown Bag Landry
+          © {new Date().getFullYear()} Brown Bag Laundry
         </CLink>
       </div>
       {/*<div className="ml-auto">

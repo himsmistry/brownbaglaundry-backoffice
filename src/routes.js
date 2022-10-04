@@ -94,8 +94,6 @@ const CouponView = React.lazy(() => import('./views/coupon/view'))
 const CouponAdd = React.lazy(() => import('./views/coupon/add'))
 const CouponEdit = React.lazy(() => import('./views/coupon/edit'))
 
-
-
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   	{ path: '/', exact: true, name: 'Home', },

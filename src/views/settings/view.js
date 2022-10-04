@@ -339,11 +339,11 @@ class Settings extends Component {
                                                             </CFormGroup>
                                                             <CFormGroup row>
                                                                 <CCol md="6">
-                                                                    <CLabel htmlFor="hf-title">Min Required Weight (For Brown Bag Signature) (In lbs)</CLabel>
+                                                                    <CLabel htmlFor="hf-title">Min Required Weight (For Lala Signature) (In lbs)</CLabel>
                                                                     <CInput type="number" placeholder="Enter min required weight" onChange={this.handleChange.bind(this,'min_required_weight_all_service')} value={this.state.fields.min_required_weight_all_service} />
                                                                 </CCol>
                                                                 <CCol md="6">
-                                                                    <CLabel htmlFor="hf-title">Weight Price($) (For Brown Bag Signature) (for 1 lbs)</CLabel>
+                                                                    <CLabel htmlFor="hf-title">Weight Price($) (For Lala Signature) (for 1 lbs)</CLabel>
                                                                     <CInput type="number" placeholder="Enter weight price" onChange={this.handleChange.bind(this,'weight_price_all_service')} value={this.state.fields.weight_price_all_service} />
                                                                 </CCol>
                                                             </CFormGroup>

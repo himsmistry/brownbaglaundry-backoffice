@@ -25,16 +25,16 @@ const TheSidebar = () => {
     <CSidebar
       show={show}
       unfoldable
-      onShowChange={(val) => dispatch({type: 'set', sidebarShow: val })}
+      onShowChange={(val) => dispatch({ type: 'set', sidebarShow: val })}
     >
-      <CSidebarBrand className="d-md-down-none" to="/dashboard" style={{ background:'#9C7046', textDecoration:'none', fontSize:'22px'}}>
-          <CImg
-               src={'logo.png'}
-               className="c-avatar-img cus_logo"
-               alt="admin@bootstrapmaster.com"
-          />
-          {/*<span> brown bag Laundry</span>*/}
-          {/*<CIcon
+      <CSidebarBrand className="d-md-down-none" to="/dashboard" style={{ background: '#966033', textDecoration: 'none', fontSize: '22px' }}>
+        <CImg
+          src={'logo.png'}
+          className="c-avatar-img cus_logo"
+          alt="admin@bootstrapmaster.com"
+        />
+        {/*<span> Brown Bag Laundry</span>*/}
+        {/*<CIcon
                className="c-sidebar-brand-full"
                name="logo-negative"
                height={35}
@@ -55,10 +55,10 @@ const TheSidebar = () => {
             CSidebarNavItem,
             CSidebarNavTitle
           }}
-          />
+        />
 
       </CSidebarNav>
-      <CSidebarMinimizer className="c-d-md-down-none"/>
+      <CSidebarMinimizer className="c-d-md-down-none" />
     </CSidebar>
   )
 }

@@ -31,7 +31,6 @@ class add extends Component {
     handleCancel(){
     	this.props.history.push('/coupon/view')
     }
-
     handleChange(field, e){
     	let fields = this.state.fields
     	if(field === 'start_date' || field === 'end_date'){
@@ -195,6 +194,7 @@ class add extends Component {
                                             <CSelect custom onChange={this.handleChange.bind(this, 'coupon_type')} value={this.state.fields.coupon_type}>
                                                 <option value="">--Select Type--</option>
                                                 <option value="referral">Referral</option>
+                                                <option value="friend">Friend Bonus</option>
                                                 <option value="first time user">First Time User</option>
                                                 <option value="other">Other</option>
                                             </CSelect>

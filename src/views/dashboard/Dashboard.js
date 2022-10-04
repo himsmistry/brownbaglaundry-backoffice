@@ -165,14 +165,14 @@ class Dashboard extends Component {
 								                    return <option key={index} value={val}>{val}</option>
 								                })
 								            }
-											</CSelect>
+								        </CSelect>
 								    </CCol>
 								</CFormGroup>
 					          	<CChartBar
 					            	datasets={[
 						              	{
 							                label: 'Total Earnings',
-											backgroundColor: '#9C7046',
+							                backgroundColor: '#292d78',
 							                data: this.state.earnings,
 						              	}
 					            	]}

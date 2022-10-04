@@ -4,6 +4,7 @@ import './scss/style.scss';
 import jquery from 'jquery';
 window.$ = window.jQuery = jquery;
 const Login = React.lazy(() => import('./views/login/login'))
+const Download = React.lazy(() => import('./views/downloadApp/view'))
 const Forgot = React.lazy(() => import('./views/forgot-password/forgot-password'))
 const Reset = React.lazy(() => import('./views/reset/reset'))
 
@@ -25,7 +26,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
             <Route exact path="/forgot" name="Forgot Page" render={props => <Forgot {...props}/>} />
-            <Route exact path="/reset" name="Reset Page" render={props => <Reset {...props}/>} />
+            <Route exact path="/reset" name="Reset Page" render={props => <Reset {...props} />} />
+            <Route exact path="/download-app" name="Download App" render={props => <Download {...props} />} />
             <Route path="/" name="Home" render={props => <TheLayout {...props}/>} />
           </Switch>
         </React.Suspense>

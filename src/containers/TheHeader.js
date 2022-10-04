@@ -23,12 +23,12 @@ const TheHeader = () => {
 
   const toggleSidebar = () => {
     const val = [true, 'responsive'].includes(sidebarShow) ? false : 'responsive'
-    dispatch({type: 'set', sidebarShow: val})
+    dispatch({ type: 'set', sidebarShow: val })
   }
 
   const toggleSidebarMobile = () => {
     const val = [false, 'responsive'].includes(sidebarShow) ? true : 'responsive'
-    dispatch({type: 'set', sidebarShow: val})
+    dispatch({ type: 'set', sidebarShow: val })
   }
 
   return (
@@ -65,7 +65,7 @@ const TheHeader = () => {
           <CIcon name="cil-moon" className="c-d-dark-none" alt="Brown Bag Laundry Icons Moon" />
           <CIcon name="cil-sun" className="c-d-default-none" alt="Brown Bag Laundry Icons Sun" />
         </CToggler>*/}
-        <Profile/>
+        <Profile />
         {/*<CToggler
           inHeader
           className="d-md-down-none"

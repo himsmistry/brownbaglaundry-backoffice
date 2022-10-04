@@ -34,17 +34,17 @@ class edit extends Component {
     	this.props.history.push('/coupon/view')
     }
 
-	handleChange(field, e) {
-		let fields = this.state.fields
-		if (field === 'start_date' || field === 'end_date') {
-			fields[field] = e;
+    handleChange(field, e){
+    	let fields = this.state.fields
+    	if(field === 'start_date' || field === 'end_date'){
+            fields[field] = e;
 		} else if (field === 'coupon_type') {
 			fields[field] = e.target.value;
-		} else {
-			fields[field] = e.target.value;
-		}
-		this.setState({ fields })
-	}
+		} else{
+    	   fields[field] = e.target.value;
+        }
+    	this.setState({fields})
+    }
 
     validation(){
     	let languages = this.state.languages;
@@ -198,7 +198,18 @@ class edit extends Component {
 					                      	<option value="amount">Amount</option>
 					                    </CSelect>
 				                    	<CFormText className="help-block">{this.state.errors.type}</CFormText>
-				                  	</CCol>
+										</CCol>
+										<CCol md="6">
+											<CLabel htmlFor="hf-Status">Coupon Type</CLabel>
+											<CSelect custom onChange={this.handleChange.bind(this, 'coupon_type')} value={this.state.fields.coupon_type}>
+												<option value="">--Select Type--</option>
+												<option value="referral">Referral</option>
+												<option value="friend">Friend Bonus</option>
+												<option value="first time user">First Time User</option>
+												<option value="other">Other</option>
+											</CSelect>
+											<CFormText className="help-block">{this.state.errors.coupon_type}</CFormText>
+										</CCol>
 				                  	<CCol md="6">
 				                    	<CLabel htmlFor="hf-Status">Value</CLabel>
 				                    	<CInput type="number" placeholder="Enter value" onChange={this.handleChange.bind(this,'value')} value={this.state.fields.value} />
